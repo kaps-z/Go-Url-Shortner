@@ -34,30 +34,32 @@ A simple, fast URL shortener built with **pure Go** and **Redis**, featuring:
 ```bash
 git clone https://github.com/yourusername/go-url-shortener.git
 cd go-url-shortener
-2. Initialize Go Module
-bash
-Copy
-Edit
+```
+
+### 2. Initialize Go Module
+```bash
 go mod init url-shortener
 go get github.com/go-redis/redis/v8
 go get golang.org/x/net
-3. Start Redis
-bash
-Copy
-Edit
+```
+
+### 3. Start Redis
+```bash
 redis-server
+```
+
 If Redis is not installed:
 
-bash
-Copy
-Edit
+```bash
 sudo apt update
 sudo apt install redis
-4. Run the Application
-bash
-Copy
-Edit
+```
+
+### 4. Run the Application
+```bash
 go run main.go
+```
+
 Visit: http://localhost:8080
 
 🌐 Usage
@@ -68,50 +70,43 @@ Enter a long URL
 
 Get a shortened URL like:
 
-bash
-Copy
-Edit
+```bash
 http://localhost:8080/r/abc123
+```
 🧪 From API (POST JSON)
-bash
-Copy
-Edit
+```bash
 curl -X POST http://localhost:8080/shorten \
   -H "Content-Type: application/json" \
   -d '{"url": "https://example.com"}'
+```
 Response:
 
-json
-Copy
-Edit
+```json
 { "short_url": "http://localhost:8080/r/abc123" }
+```
 🗄 Redis Storage
 Keys are stored with prefix: short:<code>
 
 Example:
 
-bash
-Copy
-Edit
+```bash
 redis-cli
 > KEYS short:*
 > GET short:abc123
+```
+
 📁 Project Structure
-css
-Copy
-Edit
+```css
 .
 ├── main.go       # Main logic (HTML, API, Redis, redirect)
 └── README.md     # Project documentation
+```
 🧹 Reset Redis (Optional)
 ⚠️ Destroys all data.
 
-bash
-Copy
-Edit
+```bash
 redis-cli FLUSHALL
-📌 License
-MIT License — use freely for personal or commercial projects.
+```
 
 ✨ Future Ideas
 Add analytics for link clicks
