@@ -85,10 +85,9 @@ Response:
 { "short_url": "http://localhost:8080/r/abc123" }
 ```
 🗄 Redis Storage
-Keys are stored with prefix: short:<code>
+Keys are stored with prefix: short:
 
 Example:
-
 ```bash
 redis-cli
 > KEYS short:*
@@ -107,14 +106,10 @@ redis-cli
 ```bash
 redis-cli FLUSHALL
 ```
-
 ✨ Future Ideas
+
 Add analytics for link clicks
-
 Expiring short links
-
 Auth + admin dashboard
-
 Custom aliases
-
 Made with ❤️ using Go and Redis
