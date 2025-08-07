@@ -1,0 +1,15 @@
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+main
+
+/bin/
+/build/
+/dist/
+
+vendor/
+
+
+pkg/
